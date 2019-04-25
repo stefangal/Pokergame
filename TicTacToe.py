@@ -40,6 +40,8 @@ if __name__ == '__main__':
 
         break
 
+    #inputing branch
+
 # def input_player1():
     #     input_ok = False
 #     while not input_ok:
