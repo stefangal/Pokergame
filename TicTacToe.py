@@ -49,11 +49,3 @@ if __name__ == '__main__':
 #         else:
 #             print('This position is already taken... choose another one.')
 
-# def input_player2():
-#     input_ok = False
-#     while not input_ok:
-#         player2 = int(input('Player 2 - choose cell >> '))
-#         if board[(player2)-1] != 'X' and board[(player2)-1] != 'O':
-#             input_ok = True
-#         else:
-#             print('This position is already taken... choose another one.')
