@@ -1,4 +1,10 @@
+import os
+
+
 class Board:
+    global board
+    board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
     def show():
         print()
         print(board[0], "|", board[1], "|", board[2])
@@ -9,36 +15,45 @@ class Board:
         print()
 
     
-
 class Player:
     def __init__(self, name):
         self.name = name
-        
-    def choose_nr(self, num1):
-        self.num1 = int(input(self.name + ' please choose cell >> '))
-        return self.num1
 
-    def update_player_X(self):
-        return self.board[board.index(self.name)] is 'X'
+    def choose_nr(self):   
+        global num1
+        num1 = int(input(self.name + ' please choose cell >> '))
+        return num1
 
-    def update_player_O(self):
-        return self.board[board.index(self.name)] is 'O'
-
+    def player_gives_OX(self):
+        if self.name == player1.name:
+            board[board.index(num1)] = 'O'
+        elif self.name == player2.name:
+            board[board.index(num1)] = 'X'
+    
 
 if __name__ == '__main__':
+    os.system("cls")
     crashed = False
+    print("Tic Tac Toe game...\n")
     player1 = Player(input('Player 1 please insert your name: '))
     player2 = Player(input('Player 2 please insert your name: '))
-    board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    os.system("cls")
+    print(player1.name,',', player2.name, 'welcome in the TIC-TAC-TOE game and GOOD LUCK !!!')
+    print(player1.name, "goes now with 'O'!", player2.name,"goes wih 'X' \n")
     while not crashed:
         Board.show()
+        player1.choose_nr()
+        player1.player_gives_OX()
+        os.system("cls")
         print(player1.name,',', player2.name, 'welcome in the TIC-TAC-TOE game and GOOD LUCK !!!')
-        print(player1.name, 'goes now!\n')
-        player1.choose_nr(num1)
-
-        print(player1.choose_nr(num1))
-
-        break
+        print(player1.name, "goes now with 'O'!", player2.name,"goes wih 'X' \n")
+        Board.show()
+        player2.choose_nr()
+        player2.player_gives_OX()
+        os.system("cls")
+        print(player1.name,',', player2.name, 'welcome in the TIC-TAC-TOE game and GOOD LUCK !!!')
+        print(player1.name, "goes now with 'O'!", player2.name,"goes wih 'X' \n")
+        
 
     #inputing branch
 
@@ -50,4 +65,5 @@ if __name__ == '__main__':
 #             input_ok = True
 #         else:
 #             print('This position is already taken... choose another one.')
+
 
