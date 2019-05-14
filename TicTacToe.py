@@ -14,6 +14,8 @@ class Board:
         print(board[6], "|", board[7], "|", board[8])
         print()
 
+    def check_winner(self):
+        pass
     
 class Player:
     def __init__(self, name):
@@ -21,15 +23,20 @@ class Player:
 
     def choose_nr(self):   
         global num1
-        num1 = int(input(self.name + ' please choose cell >> '))
-        return num1
+        good_input = False
+        while good_input == False:
+            num1 = int(input(self.name + ' please choose cell 1-9 > '))
+            if board[(num1)-1] != 'X' or board[board(num1)-1] != 'O':
+                good_input = True
+                return num1
+            else: 
+                print('This position is already taken... choose another one.')    
 
     def player_gives_OX(self):
-        if self.name == player1.name:
+        if self.name == player1.name and board[(num1)-1] != 'X' or board[board(num1)-1] != 'O':
             board[board.index(num1)] = 'O'
-        elif self.name == player2.name:
+        elif self.name == player2.name and board[(num1)-1] != 'X' or board[board(num1)-1] != 'O':
             board[board.index(num1)] = 'X'
-    
 
 if __name__ == '__main__':
     os.system("cls")
@@ -54,8 +61,12 @@ if __name__ == '__main__':
         print(player1.name,',', player2.name, 'welcome in the TIC-TAC-TOE game and GOOD LUCK !!!')
         print(player1.name, "goes now with 'O'!", player2.name,"goes wih 'X' \n")
         
+    # def choose_nr(self):   
+    #     global num1
+    #     num1 = int(input(self.name + ' please choose cell 1-9 > '))
+    #     return num1
 
-    #inputing branch
+
 
 # def input_player1():
     #     input_ok = False
