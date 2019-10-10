@@ -1,7 +1,7 @@
 import sys, os
 import tkinter as tk
 from tkinter import messagebox
-from Exercises.Pokergame.Cards import *
+from Pokergame.Cards import *
 
 
 class Application(tk.Frame):
