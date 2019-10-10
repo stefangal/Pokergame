@@ -1,2 +1,3 @@
 # Python Pokergame
-still under construction, but working fine, you can test
+
+use Poker_Gui.py to run with nice GUI made with Tkinter
